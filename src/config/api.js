@@ -6,14 +6,10 @@ const API_BASE = isDevelopment
   : '';
 
 export const API_ENDPOINTS = {
-  chat: `${API_BASE}/api/chat`,
+  chat: (path) => `${API_BASE}/api/chat?path=${path}`,
   chatStream: `${API_BASE}/api/chat/stream`,
-  chatStart: `${API_BASE}/api/chat/start`,
-  chatSave: `${API_BASE}/api/chat/save`,
-  chatSessions: `${API_BASE}/api/chat/sessions`,
   chatComplete: `${API_BASE}/api/chat/complete`,
   chatSession: (sessionId) => `${API_BASE}/api/chat/${sessionId}`,
-  testSupabase: `${API_BASE}/api/chat/test-supabase`,
 };
 
 // For backward compatibility during development
@@ -22,6 +18,9 @@ export const getApiUrl = (endpoint) => {
     // In development, use the old server endpoints
     return `http://localhost:3001${endpoint}`;
   }
-  // In production, use the new API routes
+  // In production, use the new consolidated API routes
+  if (endpoint === '/chat/start') return '/api/chat?path=start';
+  if (endpoint === '/chat/sessions') return '/api/chat?path=sessions';
+  if (endpoint === '/chat/save') return '/api/chat?path=save';
   return endpoint;
 };
