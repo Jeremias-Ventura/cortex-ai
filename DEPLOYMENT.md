@@ -92,3 +92,5 @@ After deployment, your API will be available at:
 - Password protection is client-side (sufficient for demo)
 - All API calls now use relative paths
 - Serverless functions have 60-second timeout
+
+

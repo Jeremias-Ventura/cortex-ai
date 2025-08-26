@@ -34,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "vercel-build": "DISABLE_ESLINT_PLUGIN=true react-scripts build"
+    "vercel-build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "dev": "concurrently \"npm run start\" \"npm run dev:api\"",
+    "dev:api": "node dev-server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +58,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.3"
   }

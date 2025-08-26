@@ -121,7 +121,7 @@ const ChatLayout = ({
 
     try {
       // Step 2: Save user message to database
-      await fetch("http://localhost:3001/chat/save", {
+              await fetch(getApiUrl("/chat/save"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

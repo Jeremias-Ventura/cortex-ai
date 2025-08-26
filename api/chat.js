@@ -37,7 +37,29 @@ export default async function handler(req, res) {
         // For demo, just return success
         return res.status(200).json({ message: "Message saved (demo mode)" });
 
+      case 'complete':
+        if (req.method !== 'POST') {
+          return res.status(405).json({ error: 'Method not allowed' });
+        }
+        // For demo, return a simple response
+        return res.status(200).json({ response: "This is a demo response from the consolidated API." });
+
+      case 'stream':
+        if (req.method !== 'POST') {
+          return res.status(405).json({ error: 'Method not allowed' });
+        }
+        // For demo, return a simple response
+        return res.status(200).json({ response: "Stream endpoint working (demo mode)" });
+
       default:
+        // Handle session ID requests (e.g., /chat/123)
+        if (path && !isNaN(path)) {
+          if (req.method !== 'GET') {
+            return res.status(405).json({ error: 'Method not allowed' });
+          }
+          // For demo, return empty messages array
+          return res.status(200).json([]);
+        }
         return res.status(404).json({ error: 'Endpoint not found' });
     }
   } catch (error) {
@@ -45,3 +67,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
+
+
