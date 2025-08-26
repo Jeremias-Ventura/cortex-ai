@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "description": "Updated configuration for React 18 compatibility",
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "build",
