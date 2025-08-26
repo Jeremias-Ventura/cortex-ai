@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "description": "Fresh deployment configuration for React 18 compatibility - ready for Vercel",
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "build",
