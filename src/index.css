@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.katex {
+  background: transparent !important;
+  color: inherit !important;
+  max-width: 100% !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
+.katex-display {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+  text-align: left;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.katex-html {
+  background: transparent !important;
+}
+
+html,
+body {
+  background-color: #0a0a0a; /* or whatever your page bg is */
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+/* In your App.css or a global CSS file */
+pre {
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background: #222;
+  color: #ffb;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+html, body, #root {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* Override highlight.js block border/background styles */
+.hljs {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.hljs {
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.5rem; /* leading-relaxed */
+  font-family: 'Fira Code', monospace;
 }

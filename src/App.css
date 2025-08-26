@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+/* KaTeX styles */
+.katex {
+  background-color: transparent !important;
+  color: inherit !important;
+  font-size: 1.1em !important;
+  line-height: 1.2 !important;
+  text-indent: 0 !important;
+  text-rendering: auto !important;
+}
+
+.katex-display {
+  background-color: transparent !important;
+  color: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  text-align: center !important;
+}
+
+.katex-display > .katex {
+  display: inline-block !important;
+  text-align: initial !important;
+  max-width: 100% !important;
+}
+
+.katex-html {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+}
+
+body {
+  background-color: transparent !important;
+  color: #ffffff;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
