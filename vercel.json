@@ -2,10 +2,5 @@
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": "build",
-  "functions": {
-    "api/chat/*.js": {
-      "maxDuration": 60
-    }
-  }
+  "outputDirectory": "build"
 }
